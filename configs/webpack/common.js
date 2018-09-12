@@ -1,6 +1,6 @@
 // shared config (dev and prod)
-const {resolve} = require('path');
-const {CheckerPlugin} = require('awesome-typescript-loader');
+const { resolve } = require('path');
+const { CheckerPlugin } = require('awesome-typescript-loader');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -26,11 +26,7 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        loaders: [
-          'style-loader',
-          { loader: 'css-loader', options: { importLoaders: 1 } },
-          'sass-loader',
-        ],
+        loaders: ['style-loader', { loader: 'css-loader', options: { importLoaders: 1 } }, 'sass-loader'],
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
@@ -41,15 +37,11 @@ module.exports = {
       },
     ],
   },
-  plugins: [
-    new CheckerPlugin(),
-    new StyleLintPlugin(),
-    new HtmlWebpackPlugin({template: 'index.html.ejs',}),
-  ],
-  externals: {
-    'react': 'React',
-    'react-dom': 'ReactDOM',
-  },
+  plugins: [new CheckerPlugin(), new StyleLintPlugin(), new HtmlWebpackPlugin({ template: 'index.html.ejs' })],
+  // externals: {
+  //   'react': 'React',
+  //   'react-dom': 'ReactDOM',
+  // },
   performance: {
     hints: false,
   },

@@ -1,9 +1,10 @@
 {
-  "name": "react-webpack-typescript-starter",
-  "version": "0.1.0",
-  "description": "Starter kit for React, Webpack (with Hot Module Replacement), Typescript and Babel.",
+  "name": "react-redux-ts-starter",
+  "version": "0.0.1",
+  "description": "Starter kit for React, Webpack (with Hot Module Replacement), Typescript, Redux, and Babel.",
   "keywords": [
     "react",
+    "redux",
     "webpack",
     "typescript",
     "babel",
@@ -12,25 +13,25 @@
     "starter",
     "boilerplate"
   ],
-  "author": "Viktor Persson",
+  "author": "Luke Brown",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vikpe/react-webpack-typescript-starter.git"
+    "url": "git+https://github.com/worbunkel/react-redux-ts-starter.git"
   },
   "bugs": {
-    "url": "https://github.com/vikpe/react-webpack-typescript-starter/issues"
+    "url": "https://github.com/worbunkel/react-redux-ts-starter/issues"
   },
-  "homepage": "https://github.com/vikpe/react-webpack-typescript-starter",
+  "homepage": "https://github.com/worbunkel/react-redux-ts-starter",
   "scripts": {
-    "build": "yarn run clean-dist && webpack -p --config=configs/webpack/prod.js",
+    "build": "npm run clean-dist && webpack -p --config=configs/webpack/prod.js && cd dist && zip -r -X deployableZip.zip index.html js",
     "clean-dist": "rm -f -r -d dist",
-    "lint": "yarn run lint:ts && yarn run lint:sass",
+    "lint": "npm run lint:ts && npm run lint:sass",
     "lint:ts": "tslint './src/**/*.ts*' --format stylish --force",
     "lint:sass": "stylelint ./src/**/*.scss",
-    "start": "yarn run start-dev",
+    "start": "npm run start-dev",
     "start-dev": "webpack-dev-server --config=configs/webpack/dev.js",
-    "start-prod": "yarn run build && node express.js",
+    "start-prod": "npm run build && node express.js",
     "test": "jest --watch --coverage --config=configs/jest.json"
   },
   "devDependencies": {
@@ -39,9 +40,13 @@
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
     "@types/jest": "^23.3.1",
+    "@types/lodash": "^4.14.116",
     "@types/node": "^10.7.1",
     "@types/react": "^16.4.11",
     "@types/react-dom": "^16.0.7",
+    "@types/react-redux": "^6.0.7",
+    "@types/react-router": "^4.0.30",
+    "@types/react-router-dom": "^4.3.0",
     "awesome-typescript-loader": "^5.2.0",
     "babel-loader": "^8.0.0",
     "css-loader": "^1.0.0",
@@ -51,6 +56,7 @@
     "image-webpack-loader": "^4.3.1",
     "jest": "^23.5.0",
     "node-sass": "^4.9.3",
+    "prettier": "^1.14.2",
     "react": "^16.4.2",
     "react-addons-test-utils": "^15.6.2",
     "react-dom": "^16.4.2",
@@ -69,5 +75,12 @@
     "webpack-dev-server": "^3.1.5",
     "webpack-merge": "^4.1.4"
   },
-  "dependencies": {}
+  "dependencies": {
+    "connected-react-router": "^4.4.1",
+    "lodash": "^4.17.10",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.3.1",
+    "redux": "^4.0.0",
+    "redux-thunk": "^2.3.0"
+  }
 }

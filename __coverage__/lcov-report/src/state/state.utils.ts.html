@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/state/state.utils.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">All files</a> / <a href="index.html">src/state</a> state.utils.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">7.14% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>6/84</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">8.45% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>6/71</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">5.88% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/17</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">11.36% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>5/44</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { RootAction, RootBasicAction, RootBasicDispatch } from './root-action';
+<span class="fstat-no" title="function not covered" ></span>
+expo<span class="cstat-no" title="statement not covered" >rt const createAsyncAction = &lt;R <span class="fstat-no" title="function not covered" >ex</span>tends RootBasicAction, S extends RootBasicAction, F extends RootBasicAction, T&gt;(</span>
+  asyncRequest: (<span class="fstat-no" title="function not covered" >) =&gt; Promi</span>se&lt;T&gt;,<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ></span></span></span>
+  actionCreators:<span class="fstat-no" title="function not covered" > AsyncAct</span>ionCreato<span class="cstat-no" title="statement not covered" >rs&lt;R, <span class="cstat-no" title="statement not covered" >S, F, T&gt;,<span class="cstat-no" title="statement not covered" ></span></span></span>
+): (() =&gt; RootAct<span class="fstat-no" title="function not covered" >ion) </span>=&gt; () =&gt; a<span class="cstat-no" title="statement not covered" >sync (dispatch: RootBasicDispatch) =&gt; {<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span></span></span>
+  dispat<span class="cstat-no" title="statement not covered" >ch(actionCreators.request());</span>
+  try {
+    const result = await asyncRequest();
+    dispatch(actionCreators.success(result));<span class="fstat-no" title="function not covered" ></span>
+  } catch (e<span class="cstat-no" title="statement not covered" >) {<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span></span></span></span></span>
+<span class="cstat-no" title="statement not covered" >    dispatch(actionCreators.failure());<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span></span></span>
+  }<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ></span></span></span></span>
+};<span class="fstat-no" title="function not covered" ></span>
+<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ></span></span>
+export t<span class="cstat-no" title="statement not covered" >ype AsyncA<span class="cstat-no" title="statement not covered" >ctionCreator&lt;T&gt; = (...args: Array&lt;() =&gt; Promise&lt;T&gt;&gt;) =&gt; RootAction;</span></span>
+<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ></span></span>
+export type <span class="cstat-no" title="statement not covered" >AsyncActionCre<span class="cstat-no" title="statement not covered" >ators&lt;R, S, F, T&gt; = {</span></span>
+  request: (<span class="cstat-no" title="statement not covered" >) =&gt; R;</span>
+  success: (arg: T) =&gt; S;<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ></span></span>
+  failure: () =&gt; F;<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ></span></span>
+};<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ></span></span></span></span>
+<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ></span></span></span></pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Sep 12 2018 12:08:12 GMT-0700 (PDT)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>
