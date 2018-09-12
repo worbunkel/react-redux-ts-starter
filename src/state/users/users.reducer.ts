@@ -4,11 +4,11 @@ import { DefaultUsersState, User, UsersState } from './users.state';
 
 export const usersReducer = (prevState: UsersState = DefaultUsersState(), action: UsersAction): UsersState => {
   switch (action.type) {
-    case UsersActionType.GET_USERS_REQUEST:
+    case UsersActionType.FETCH_USERS_REQUEST:
       return onGetUsersRequest(prevState);
-    case UsersActionType.GET_USERS_SUCCESS:
+    case UsersActionType.FETCH_USERS_SUCCESS:
       return onGetUsersSuccess(prevState, _.get(action, 'payload.users'));
-    case UsersActionType.GET_USERS_FAILURE:
+    case UsersActionType.FETCH_USERS_FAILURE:
       return onGetUsersFailure(prevState);
     default:
       return prevState;

@@ -6,7 +6,7 @@ import { getUsersAsync } from './users.actions';
 
 type Props = ReturnType<typeof mapStateToProps> & ReturnType<typeof mapDispatchToProps>;
 
-const Users = (props: Props) => (
+export const Users = (props: Props) => (
   <div>
     <div>Users:</div>
     <div>

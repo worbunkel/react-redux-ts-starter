@@ -13,7 +13,7 @@ describe('usersReducer', () => {
     });
   });
 
-  describe('on GET_USERS_REQUEST', () => {
+  describe('on FETCH_USERS_REQUEST', () => {
     it('should clear users', () => {
       const prevState = { users: [{ name: 'Luke', id: 1 }] };
 
@@ -23,7 +23,7 @@ describe('usersReducer', () => {
     });
   });
 
-  describe('on GET_USERS_SUCCESS', () => {
+  describe('on FETCH_USERS_SUCCESS', () => {
     it('should set users', () => {
       const prevState = { users: [] };
       const users = [{ name: 'Luke', id: 1 }];
@@ -34,7 +34,7 @@ describe('usersReducer', () => {
     });
   });
 
-  describe('on GET_USERS_FAILURE', () => {
+  describe('on FETCH_USERS_FAILURE', () => {
     it('should return the state', () => {
       const prevState = { users: [{ name: 'Luke', id: 1 }] };
 
