@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/state/pages/sales-forecast/sales-forecast.reducer.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">All files</a> / <a href="index.html">src/state/pages/sales-forecast</a> sales-forecast.reducer.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">61.11% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>22/36</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">47.62% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>10/21</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">83.33% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>5/6</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">64.52% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>20/31</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import * as _ from 'lodash';
+import { assertUnreachable } from '../../../utils';
+import { SalesForecastAction, Sa<span class="fstat-no" title="function not covered" ><span class="branch-1 cbranch-no" title="branch not covered" >le</span>sForecastActionType } from './sales-forecast.actions';</span>
+import {<span class="cstat-no" title="statement not covered" > DefaultSalesForecastState, ForecastDayDatum, SalesForecastState } from './sales-forecast.state';</span>
+<span class="cstat-no" title="statement not covered" ></span>
+export const<span class="cstat-no" title="statement not covered" > salesForecastRed<span class="cstat-no" title="statement not covered" >ucer = (</span></span>
+  prevState = De<span class="cstat-no" title="statement not covered" >faultSalesFor</span>ecastState(),
+  action: SalesForecastAction,
+): Sales<span class="cstat-no" title="statement not covered" >ForecastSt</span>ate =&gt; {
+  switch (action.type) {
+    case SalesForecastActionType.GET_THIRTY_DAY_FORECAST_REQUEST:
+      return onGetThirtyDayForecastRequest(prevState);
+    case SalesForecastActionType.GET_THIRTY_DAY_FORECAST_SUCCESS:
+      return onGetThirtyDayForecastSuccess(prevState, action.payload.thirtyDayForecastData);
+    case SalesForecastActionType.GET_THIRTY_DAY_FORECAST_FAILURE:
+      return onGetThirtyDayForecastFailure(prevState);
+    case SalesForecastActionType.GET_SIXTY_DAY_FORECAST_REQUEST:
+    <span class="missing-if-branch" title="if path not taken" >I</span>  return prevState; // TODO<span class="cstat-no" title="statement not covered" ></span>
+    case SalesForecastActionType.GET_SIXTY_DAY_FORECAST_SUCCESS:
+      return prevState; // TODO
+    case SalesForecastActionType.GET_SIXTY_DAY_FORECAST_FAILURE:
+      return prevState; // TODO
+    case SalesForecastActionType.GET_NINETY_DAY_FORECAST_REQUEST:
+      return prevState; // TODO
+    case SalesForecastActionType.GET_NINETY_DAY_FORECAST_SUCCESS:
+      re<span class="branch-3 cbranch-no" title="branch not covered" >turn prevState; // TODO</span>
+    case Sal<span class="cstat-no" title="statement not covered" >esForecastActionTy</span>pe.GET_NINETY_DAY_FORECAST_FAILURE:
+      re<span class="branch-4 cbranch-no" title="branch not covered" >turn prevState; // TODO</span>
+    default:<span class="cstat-no" title="statement not covered" ></span>
+      as<span class="branch-5 cbranch-no" title="branch not covered" >sertUnreachable(action.type);</span>
+<span class="cstat-no" title="statement not covered" ></span>
+      re<span class="branch-6 cbranch-no" title="branch not covered" >turn prevState;</span>
+  }<span class="cstat-no" title="statement not covered" ></span>
+};<span class="branch-7 cbranch-no" title="branch not covered" ></span>
+<span class="cstat-no" title="statement not covered" ></span>
+const on<span class="branch-8 cbranch-no" title="branch not covered" >GetThirtyDayForecastRequest = (prevState: SalesForecastState) =&gt; ({</span>
+  ...prevSta<span class="cstat-no" title="statement not covered" >te,</span>
+  isLoading: true,
+  users: [],
+});
+&nbsp;
+const onGetThirtyDayForecastSuccess = (
+  prevState: SalesForecastState,
+  thirtyDayForecastData: ForecastDayDatum[] = [],
+) =&gt;<span class="missing-if-branch" title="if path not taken" >I</span> ({<span class="cstat-no" title="statement not covered" ></span>
+  ...prevState,
+  isLoading: false,
+  thirtyDayForecastData,
+});
+&nbsp;
+const onGetThirtyDayForecastFailure = (prevState: SalesForecastState) =&gt; ({
+  ...prevState,
+  isLoading: false,
+});
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Oct 02 2018 16:01:22 GMT-0500 (CDT)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

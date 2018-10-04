@@ -1,0 +1,653 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/state/components/thirty-day-forecast/thirty-day-forecast.component.tsx</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">All files</a> / <a href="index.html">src/state/components/thirty-day-forecast</a> thirty-day-forecast.component.tsx
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/67</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/14</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/14</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/48</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { AxisBottom, AxisLeft } from '@vx/axis';
+<span class="cstat-no" title="statement not covered" >import { curveLinear } from '@vx/curve';</span>
+import { Glyp<span class="cstat-no" title="statement not covered" >hDot } from '@vx/gly</span>ph';
+import { Group<span class="cstat-no" title="statement not covered" > } from '@vx/group';</span>
+import { scale<span class="cstat-no" title="statement not covered" >Linear, scaleTime } f</span>rom '@vx/scale';
+import { LineP<span class="cstat-no" title="statement not covered" >ath } from '@vx/shape</span>';
+import { Toolt<span class="cstat-no" title="statement not covered" >ip, withTooltip } fro</span>m '@vx/tooltip';
+import * as da<span class="cstat-no" title="statement not covered" >yjs from 'dayjs';</span>
+import * as _ fr<span class="cstat-no" title="statement not covered" >om 'lodash';</span>
+import * as <span class="cstat-no" title="statement not covered" >React from 'react</span>';
+import {<span class="cstat-no" title="statement not covered" > Color } from '../</span>../../color';
+import { ext<span class="cstat-no" title="statement not covered" >ent } from '../..</span>/graph.utils';
+import { Forec<span class="cstat-no" title="statement not covered" >astDayDatum } from '../../</span>pages/sales-forecast/sales-forecast.state';
+import './thirty-day<span class="cstat-no" title="statement not covered" >-forecast.scss';</span>
+<span class="cstat-no" title="statement not covered" ></span>
+type Props = {<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span></span>
+  data: Forecas<span class="cstat-no" title="statement not covered" >tDayDatu</span>m[];<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ></span></span></span></span></span></span></span></span></span></span></span></span></span>
+  he<span class="cstat-no" title="statement not covered" >ight: number;</span>
+  hideTo<span class="cstat-no" title="statement not covered" >oltip?: (options: any) =&gt; void;</span>
+  isLoading: boolean;
+  margin: { <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >to</span>p: number; ri<span class="cstat-no" title="statement not covered" >ght: number; bottom: number; lef</span>t:</span> number };
+  showTooltip?: (op<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >ti</span>ons: any) =&gt; vo<span class="cstat-no" title="statement not covered" >id;<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span></span></span></span>
+  tooltipData?: { datum: F<span class="cstat-no" title="statement not covered" >orecastDayDatum; tooltipMainKey: ke</span>yof ForecastDayDatum };
+  tooltipHeight: number;<span class="cstat-no" title="statement not covered" ></span>
+  tooltipLeft?: nu<span class="cstat-no" title="statement not covered" >mber;<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span></span></span>
+  tooltipOpen?: b<span class="cstat-no" title="statement not covered" >oolean;</span>
+  tooltipTop?: number;
+  tooltipWidth: number;
+  width: number;
+  xKey: keyof For<span class="cstat-no" title="statement not covered" >ecastDayDatum;</span>
+};
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span></span>
+const ThirtyDayForecastNoTooltip = ({
+  data,<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span></span>
+  height<span class="cstat-no" title="statement not covered" >,<span class="cstat-no" title="statement not covered" ></span></span>
+  hideTooltip,<span class="cstat-no" title="statement not covered" ></span>
+  isLoad<span class="cstat-no" title="statement not covered" >ing,</span>
+  margin,<span class="cstat-no" title="statement not covered" ></span>
+  showTooltip,
+  tooltipData,
+  tooltipHei<span class="cstat-no" title="statement not covered" >ght,</span>
+  tooltipLeft,
+  tooltipOpen,
+  tooltipTop,<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span></span></span>
+  to<span class="cstat-no" title="statement not covered" >oltipWidth,</span>
+  width,
+  xKey,<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ></span></span></span>
+}: Props) =&gt; {<span class="cstat-no" title="statement not covered" ></span>
+  if (!data || isLoading) {<span class="fstat-no" title="function not covered" ></span>
+    return &lt;div style={{ width, height, backg<span class="cstat-no" title="statement not covered" >roundColor: Color</span>.SamsDarkGrayLightest }}&gt;Loading...&lt;/div&gt;;
+  }<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" ></span>
+  const x = d =&gt; dayjs(d[xKey]).toDate();<span class="cstat-no" title="statement not covered" ></span>
+  const yCreator = (key: keyof F<span class="cstat-no" title="statement not covered" >orecastDayDatum) =&gt; (d: ForecastDayDatum) =&gt; d[key];</span>
+<span class="cstat-no" title="statement not covered" ></span>
+  const graphPixelWidth = width - margin.left - margin.right;
+  const graphPixelHeight = height - margin.top - margin.bottom;
+&nbsp;
+  const yValues = _.flatMap(data, d =&gt; _.values(_.omit(d, 'day', 'date')));
+<span class="cstat-no" title="statement not covered" ></span>
+  const xScale = scaleTime({<span class="fstat-no" title="function not covered" ></span>
+    range: [0, graphPixelWidth],<span class="cstat-no" title="statement not covered" ></span>
+    domain: [dayjs(_.first(data)<span class="cstat-no" title="statement not covered" >.date).toDate(), dayjs(_.last(data).date).toDate()],</span>
+  });
+  const yScale = scaleLinear({
+    range: [graphPixelHeight, 0],
+    domain: extent(yValues, (d: number) =&gt; d, 0.05),
+  });
+&nbsp;
+  const getXAxisNumTicks = (forecastData: ForecastDayDatum[], width: number, tickWidth: number = 24) =&gt; {
+    const count = _.size(forecastData);
+    if (width / count &gt; tickWidth) {<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span></span>
+      return count;
+    } else {
+      return Math.floor(width / tickWidth);
+    }
+  };
+&nbsp;
+  const allKeys = _.uniq(_.flatMap(data, data =&gt; _.keys(_.omit(data, 'day', 'date')) as Array&lt;keyof ForecastDayDatum&gt;));
+&nbsp;
+  return [
+    &lt;svg key={1} width={width} height={height}&gt;
+      &lt;Group left={margin.left} top={margin.top}&gt;
+        {_.map(allKeys, (key, index) =&gt; (
+          &lt;LinePath
+            key={`line-path-${key}`}
+            data={data}
+            x={x}
+            y={yCreator(key)}
+            xScale={xScale}
+            yScale={yScale}
+            curve={curveLinear}
+            style={{ strokeLinecap: 'round', strokeLinejoin: 'round' }}
+            className={`graph-theme-${index + 1}`}<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span></span>
+            glyph={(datum, circleIndex) =&gt;
+              datum[key] &amp;&amp; (
+                &lt;g key={`line-point-${key}-${circleIndex}`}&gt;
+                  &lt;GlyphDot
+                    cx={xScale(x(datum))}
+                    cy={yScale(yCreator(key)(datum))}
+<span class="cstat-no" title="statement not covered" >                    className={`graph-circle graph-theme-${index + 1}-circle`}</span>
+                    onMouseOver={(event: { target: SVGElement }) =&gt; {
+                      const xValue = xScale(x(datum));
+                      const yValue = yScale(yCreator(key)(datum));
+                      const tooltipLeft = Math.min(
+                        Math.max(xValue + margin.left - tooltipWidth / 2, margin.left),
+                        graphPixelWidth - margin.left,
+                      );
+                      let tooltipTop = yValue + margin.top - tooltipHeight - 10;
+                      tooltipTop = tooltipTop &gt; 0 ? tooltipTop : yValue + margin.top + 10;
+                      showTooltip({
+                        tooltipLeft,
+                        tooltipTop,
+                        tooltipData: { datum, tooltipMainKey: key },
+                      });
+                      event.target.classList.add('graph-circle-hover');
+                    }}
+                    onMouseLeave={event =&gt; {
+                      hideTooltip({});
+                      event.target.classList.remove('graph-circle-hover');
+                    }}
+                  /&gt;
+                &lt;/g&gt;
+              )
+            }
+          /&gt;
+        ))}
+      &lt;/Group&gt;
+      &lt;Group left={margin.left} top={margin.top}&gt;
+        &lt;AxisLeft
+          scale={yScale}
+          label={'$USD'}
+          left={0}
+          labelProps={{
+            fill: '#000',
+            textAnchor: 'middle',
+            fontSize: 12,
+          }}
+          stroke="#000"
+          hideAxisLine={true}
+          hideTicks={true}
+        /&gt;
+        &lt;AxisBottom
+          top={height - margin.bottom - margin.top}
+          left={0}
+          scale={xScale}
+          tickFormat={value =&gt; dayjs(value).format('DD')}
+          numTicks={getXAxisNumTicks(data, width)}
+          hideAxisLine={true}
+          hideTicks={true}
+        /&gt;
+      &lt;/Group&gt;
+    &lt;/svg&gt;,
+    tooltipOpen &amp;&amp; (
+      &lt;Tooltip
+        key={2}
+        top={tooltipTop}
+        left={tooltipLeft}
+        className="thirty-day-forecast-tooltip"
+        style={{
+          minWidth: tooltipWidth,
+          maxWidth: tooltipWidth,
+          minHeight: tooltipHeight,
+          maxHeight: tooltipHeight,
+          // Overwrite props that should be set in css
+          backgroundColor: '',
+          borderRadius: '',
+          boxSizing: '',
+          color: '',
+          fontSize: '',
+          padding: '',
+        }}
+      &gt;
+        &lt;div key="date"&gt;
+          &lt;strong&gt;{dayjs(tooltipData.datum.date).format('MMM DD, YYYY')}&lt;/strong&gt;
+        &lt;/div&gt;
+        &lt;div key={tooltipData.tooltipMainKey}&gt;
+          &lt;small&gt;
+            &lt;strong&gt;
+              {tooltipData.tooltipMainKey}: {tooltipData.datum[tooltipData.tooltipMainKey]}
+            &lt;/strong&gt;
+          &lt;/small&gt;
+        &lt;/div&gt;
+        {_.map(_.omit(tooltipData.datum, 'day', 'date', tooltipData.tooltipMainKey), (value, key) =&gt; (
+          &lt;div key={key}&gt;
+            &lt;small&gt;
+              {key}: {value}
+            &lt;/small&gt;
+          &lt;/div&gt;
+        ))}
+      &lt;/Tooltip&gt;
+    ),
+  ];
+};
+&nbsp;
+export const ThirtyDayForecast: React.ComponentType&lt;Props&gt; = withTooltip(ThirtyDayForecastNoTooltip);
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Oct 02 2018 16:01:22 GMT-0500 (CDT)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

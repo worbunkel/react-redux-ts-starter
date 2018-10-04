@@ -35,6 +35,7 @@ module.exports = {
           'image-webpack-loader?bypassOnDebug&optipng.optimizationLevel=7&gifsicle.interlaced=false',
         ],
       },
+      { test: /\.md$/, loader: 'ignore-loader' },
     ],
   },
   plugins: [new CheckerPlugin(), new StyleLintPlugin(), new HtmlWebpackPlugin({ template: 'index.html.ejs' })],

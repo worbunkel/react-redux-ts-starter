@@ -1,0 +1,50 @@
+.graph-theme-1 {
+  stroke: $SamsLightBlueLightest;
+  stroke-width: 4;
+
+  &-circle {
+    fill: $SamsLightBlueLightest;
+    stroke-width: 0;
+  }
+}
+
+.graph-theme-2 {
+  stroke: $SamsMediumBlueLighter;
+  stroke-width: 4;
+
+  &-circle {
+    fill: $SamsMediumBlueLighter;
+    stroke-width: 0;
+  }
+}
+
+.graph-theme-3 {
+  stroke: $SamsMediumBlueLighter;
+  stroke-width: 4;
+  stroke-dasharray: 0, 9;
+
+  &-circle {
+    fill: $SamsMediumBlueLighter;
+    stroke-width: 0;
+  }
+}
+
+.graph-theme-4 {
+  stroke: $SamsDarkBlueDarker;
+  stroke-width: 4;
+
+  &-circle {
+    fill: $SamsDarkBlueDarker;
+    stroke-width: 0;
+  }
+}
+
+.graph-theme-5 {
+  stroke: $SamsGreen;
+  stroke-width: 4;
+
+  &-circle {
+    fill: $SamsGreen;
+    stroke-width: 0;
+  }
+}

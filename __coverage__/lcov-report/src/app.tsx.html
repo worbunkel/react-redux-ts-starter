@@ -22,22 +22,22 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>0/31</span>
+        <span class='fraction'>0/15</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/14</span>
+        <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>0/10</span>
+        <span class='fraction'>0/2</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>0/27</span>
+        <span class='fraction'>0/14</span>
       </div>
     </div>
   </div>
@@ -77,20 +77,16 @@
 32
 33
 34
-35</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+35
+36
+37
+38
+39
+40
+41</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -101,57 +97,79 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { ConnectedRouter } from 'connected-react-router';
-import { History<span class="cstat-no" title="statement not covered" > } from 'history';<span class="fstat-no" title="function not covered" ></span></span>
-import * as React from '<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >re</span>act';</span>
-import {<span class="cstat-no" title="statement not covered" > Provider } from 'react-redux';</span>
-import { Route } from 'react-router';<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span></span>
-import { Sto<span class="fstat-no" title="function not covered" >re</span> } from 'redux';<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ></span></span></span>
-import '<span class="cstat-no" title="statement not covered" >./assets/scss/App.scss';</span>
-import { UsersContainer } from './state/users/users.component';
+<span class="cstat-no" title="statement not covered" >import { History } from 'history';</span>
+import * as React from 'react';<span class="cstat-no" title="statement not covered" ></span>
+import { Pro<span class="cstat-no" title="statement not covered" >vider } from 'rea</span>ct-redux';
+import { Route, Swit<span class="cstat-no" title="statement not covered" >ch } from 'react-router</span>';
+import { Store } from<span class="cstat-no" title="statement not covered" > 'redux';</span>
+<span class="cstat-no" title="statement not covered" >import './app.scss';</span>
+import { NavBar } from './<span class="cstat-no" title="statement not covered" >state/nav-bar/nav-bar.component';</span>
+import { SalesForecastPage } from<span class="cstat-no" title="statement not covered" > './state/pages/sales-forecast/sales-forecast.component';</span>
+import { UsersContainer <span class="cstat-no" title="statement not covered" >} from './state/users/users.component';</span>
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span></span>
-export i<span class="cstat-no" title="statement not covered" >nterface AppProps {</span>
-  store: Store&lt;an<span class="fstat-no" title="function not covered" >y&gt;;<span class="cstat-no" title="statement not covered" ></span></span>
-  histor<span class="cstat-no" title="statement not covered" >y: History;</span>
+export interface<span class="cstat-no" title="statement not covered" > AppProps</span> {<span class="cstat-no" title="statement not covered" ></span>
+  st<span class="cstat-no" title="statement not covered" >ore: Store&lt;any&gt;;</span>
+  history: History;
 }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >export class App extends React.Component&lt;AppProps&gt; {</span>
-  render() {<span class="cstat-no" title="statement not covered" ></span>
-    const { <span class="cstat-no" title="statement not covered" >store, history } </span>= this.props;
-    console.log({<span class="cstat-no" title="statement not covered" ></span>
-      store,<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >      history,</span>
-      Provider,<span class="cstat-no" title="statement not covered" ></span>
-      ConnectedRouter,<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span></span>
-<span class="cstat-no" title="statement not covered" >      Route,</span>
-      UsersCo<span class="fstat-no" title="function not covered" >ntai</span>ner,
-    });<span class="cstat-no" title="statement not covered" ></span>
-    return (
-<span class="cstat-no" title="statement not covered" >      &lt;Provider store={stor<span class="fstat-no" title="function not covered" >e}</span>&gt;</span>
-        &lt;Connecte<span class="cstat-no" title="statement not covered" >dRouter his</span>tory={his<span class="cstat-no" title="statement not covered" >tory}&gt;<span class="cstat-no" title="statement not covered" ></span></span>
-<span class="cstat-no" title="statement not covered" >          &lt;Route exact={true} path="/" render={() =&gt; &lt;UsersContainer /&gt;} /&gt;</span>
-        &lt;/ConnectedRouter&gt;
-      &lt;/Provider&gt;
-    );
-  }
-}
+export const App = ({ store, history }: AppProps) =&gt; {
+  console.log({
+    store,
+    history,
+<span class="cstat-no" title="statement not covered" >    Provider,</span>
+    ConnectedRouter,
+    Route,
+    UsersContainer,<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span></span>
+  });
+&nbsp;
+  return (
+    &lt;Provider store={store}&gt;
+      &lt;ConnectedRouter history={history}&gt;
+        &lt;Switch&gt;
+          &lt;Route
+            exact={true}
+            path="/"
+            render={() =&gt; [&lt;NavBar key={'nav-bar'} /&gt;, &lt;SalesForecastPage key={'sales-forecast-page'} /&gt;]}
+          /&gt;
+        &lt;/Switch&gt;
+      &lt;/ConnectedRouter&gt;
+    &lt;/Provider&gt;
+  );
+};
 &nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Sep 12 2018 12:08:12 GMT-0700 (PDT)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Oct 02 2018 16:01:22 GMT-0500 (CDT)
 </div>
 </div>
 <script src="../prettify.js"></script>

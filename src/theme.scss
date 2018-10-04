@@ -1,0 +1,121 @@
+$white: #fff;
+$black: #000;
+$shadow: rgba(0, 0, 0, 0.2);
+$SamsDarkBlueDarkest: #001a47;
+$SamsDarkBlueDarker: #001e53;
+$SamsDarkBlueDark: #00276b;
+$SamsDarkBlue: #002c77;
+$SamsDarkBlueLight: #194184;
+$SamsDarkBlueLighter: #4c6b9f;
+$SamsDarkBlueLighter2: #7f95bb;
+$SamsDarkBlueLightest: #b2bfd6;
+$SamsMediumBlueDarkest: #00325f;
+$SamsMediumBlueDarker: #003a6f;
+$SamsMediumBlueDark: #004b8f;
+$SamsMediumBlue: #00549f;
+$SamsMediumBlueLight: #1965a8;
+$SamsMediumBlueLighter: #4c87bb;
+$SamsMediumBlueLighter2: #7fa9cf;
+$SamsMediumBlueLightest: #b2cbe2;
+$SamsLightBlueDarkest: #004978;
+$SamsLightBlueDarker: #00558c;
+$SamsLightBlueDark: #006db4;
+$SamsLightBlue: #007ac9;
+$SamsLightBlueLight: #1987ce;
+$SamsLightBlueLighter: #4ca1d9;
+$SamsLightBlueLighter2: #7fbce4;
+$SamsLightBlueLightest: #b2d7ee;
+$SamsGreenDarkest: #365514;
+$SamsGreenDarker: #3f6417;
+$SamsGreenDark: #51801e;
+$SamsGreen: #5b8f22;
+$SamsGreenLight: #6b9a38;
+$SamsGreenLighter: #8cb064;
+$SamsGreenLighter2: #adc790;
+$SamsGreenLightest: #cdddbc;
+$SamsYellowDarkest: #916900;
+$SamsYellowDarker: #a97a00;
+$SamsYellowDark: #d99d00;
+$SamsYellow: #f2af00;
+$SamsYellowLight: #f3b719;
+$SamsYellowLighter: #f5c74c;
+$SamsYellowLighter2: #f8d77f;
+$SamsYellowLightest: #fbe7b2;
+$SamsOrangeDarkest: #8c4415;
+$SamsOrangeDarker: #a34f19;
+$SamsOrangeDark: #d26620;
+$SamsOrange: #ea7224;
+$SamsOrangeLight: #ec8039;
+$SamsOrangeLighter: #f09c65;
+$SamsOrangeLighter2: #f4b891;
+$SamsOrangeLightest: #f8d4bd;
+$SamsRedDarkest: #761115;
+$SamsRedDarker: #491419;
+$SamsRedDark: #b11a20;
+$SamsRed: #c51d24;
+$SamsRedLight: #ca3339;
+$SamsRedLighter: #d66065;
+$SamsRedLighter2: #e28e91;
+$SamsRedLightest: #edbbbd;
+$SamsDarkGrayDarkest: #282828;
+$SamsDarkGrayDarker: #3b3b3b;
+$SamsDarkGrayDark: #595959;
+$SamsDarkGray: #737373;
+$SamsDarkGrayLight: #828282;
+$SamsDarkGrayLighter: #a1a1a1;
+$SamsDarkGrayLighter2: #c1c1c1;
+$SamsDarkGrayLightest: #e0e0e0;
+
+$primary-text: $SamsMediumBlueDark;
+$primary-bg: $SamsLightBlueLighter2;
+
+.button__flat {
+  background-color: transparent;
+  border-radius: 4px;
+  border: none;
+  color: $primary-text;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  height: 40px;
+  line-height: 24px;
+  min-width: 64px;
+  padding: 8px 16px;
+
+  &:hover {
+    background-color: rgba($primary-text, 0.2);
+  }
+
+  &--state-active {
+    color: $white;
+  }
+}
+
+.button__flat--with-icon {
+  text-align: center;
+  border-radius: 4px 4px 0 0;
+
+  span {
+    overflow: hidden;
+    display: inline-block;
+    height: 24px;
+  }
+}
+
+.menu-button {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+  padding: 8px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba($primary-text, 0.2);
+  }
+}
+
+.button-hover-menu {
+  background-color: $primary-bg;
+  z-index: 1;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}

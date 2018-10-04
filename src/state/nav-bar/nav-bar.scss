@@ -1,0 +1,29 @@
+@import '../../theme.scss';
+
+.nav-bar {
+  background-color: $primary-bg;
+  height: 72px;
+  padding: 16px;
+  display: grid;
+  grid: 40px / 40px 190px 120px 120px 1fr 120px;
+  grid-gap: 16px;
+
+  * {
+    color: $SamsMediumBlueDark;
+    margin: auto 0;
+  }
+
+  .app-name {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 40px;
+  }
+
+  .button__flat {
+    width: 100%;
+  }
+
+  :nth-child(5) {
+    grid-column: 6;
+  }
+}

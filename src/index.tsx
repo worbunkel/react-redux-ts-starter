@@ -6,7 +6,6 @@ import { history, store } from './state/root-store';
 
 const rootEl = document.getElementById('root');
 
-console.log({ store, history });
 render(
   <AppContainer>
     <App store={store} history={history} />

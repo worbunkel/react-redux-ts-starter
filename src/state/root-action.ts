@@ -1,14 +1,19 @@
 import { RouterAction } from 'connected-react-router';
+import { UnionToIntersection } from '../utility.types';
+import { NavBarActions } from './nav-bar/nav-bar.actions';
+import { SalesForecastActions } from './pages/sales-forecast/sales-forecast.actions';
 import { RootState } from './root-reducer';
 import { UsersActions } from './users/users.actions';
 
 export const actions = {
   users: UsersActions,
+  salesForecast: SalesForecastActions,
+  navBar: NavBarActions,
 };
 
-const actionsValues = Object.values(UsersActions);
-
-type AppAction = ReturnType<typeof actionsValues[number]>;
+type ActionsType = typeof actions;
+type AllActions = UnionToIntersection<ActionsType[keyof ActionsType]>;
+type AppAction = ReturnType<AllActions[keyof AllActions]>;
 
 export type RootBasicAction = AppAction | RouterAction;
 
