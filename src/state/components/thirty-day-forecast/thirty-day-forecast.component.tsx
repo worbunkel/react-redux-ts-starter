@@ -84,7 +84,7 @@ const ThirtyDayForecastNoTooltip = ({
         {_.map(allKeys, (key, index) => (
           <LinePath
             key={`line-path-${key}`}
-            data={data}
+            data={_.filter(data, key)}
             x={x}
             y={yCreator(key)}
             xScale={xScale}
