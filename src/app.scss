@@ -4,13 +4,22 @@
   outline: none;
 }
 
+html {
+  height: 100%;
+}
+
 body {
   margin: 0;
+  height: 100%;
 }
 
 .nav-bar {
   grid-area: navbar;
   z-index: 1;
+}
+
+#root {
+  height: 100%;
 }
 
 .content {
@@ -27,7 +36,7 @@ body {
   display: grid;
   min-height: 100%;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 72px 1fr 40px;
+  grid-template-rows: 72px 1fr 48px;
   grid-template-areas:
     'navbar  navbar  navbar  navbar'
     'content content content content'

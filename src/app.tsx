@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import { Route, Switch } from 'react-router';
 import { Store } from 'redux';
 import './app.scss';
+import { Footer } from './state/components/footer/footer.component';
 import { NavBar } from './state/nav-bar/nav-bar.component';
 import { SalesForecastPage } from './state/pages/sales-forecast/sales-forecast.component';
 
@@ -24,6 +25,7 @@ export const App = ({ store, history }: AppProps) => (
             <div className="app">
               <NavBar key={'nav-bar'} />
               <SalesForecastPage key={'sales-forecast-page'} />
+              <Footer key={'footer'} />
             </div>
           )}
         />
