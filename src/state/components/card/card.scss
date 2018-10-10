@@ -1,0 +1,24 @@
+.card {
+  border: 2px solid black;
+  padding: 10px 20px;
+
+  .upper-text {
+    font-weight: bold;
+    font-size: 14px;
+    padding-bottom: 5px;
+  }
+
+  .date {
+    padding-bottom: 15px;
+  }
+
+  .lower-text {
+    font-weight: normal;
+    font-size: 14px;
+    padding-bottom: 3px;
+  }
+
+  .link {
+    bottom: 0;
+  }
+}
