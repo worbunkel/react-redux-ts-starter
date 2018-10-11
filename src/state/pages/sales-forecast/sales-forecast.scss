@@ -1,3 +1,30 @@
 .thirty-day-forecast {
   background-color: #333;
 }
+
+.content {
+  z-index: 0;
+  display: grid;
+  grid-column-gap: 20fr;
+  grid-template-columns: 780fr 370fr;
+  grid-template-areas:
+    'forecast-overview forecast-overview'
+    'forecast-details analysis-and-insights'
+    'supporting-information blank';
+
+  .forecast-overview {
+    grid-area: forecast-overview;
+  }
+
+  .forecast-details {
+    grid-area: forecast-details;
+  }
+
+  .analysis-and-insights {
+    grid-area: analysis-and-insights;
+  }
+
+  .supporting-information {
+    grid-area: supporting-information;
+  }
+}

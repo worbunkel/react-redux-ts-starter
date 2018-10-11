@@ -2,10 +2,9 @@ import { push } from 'connected-react-router';
 import * as _ from 'lodash';
 import { UnionToIntersection } from '../../utility.types';
 import { RootDispatch } from '../root-action';
-import { NavBarState, NavLink } from './nav-bar.state';
+import { NavLink } from './nav-bar.state';
 
 export enum NavBarActionType {
-  SET_NAV_BAR_STATE = 'navBar/SET_NAV_BAR_STATE',
   HOVER_LINK = 'navBar/HOVER_LINK',
   UNHOVER_LINK = 'navBar/UNHOVER_LINK',
 }
@@ -29,12 +28,6 @@ export const unhoverLink = () => ({
   payload: null,
 });
 
-export const setNavBarState = (navBarState: NavBarState) => ({
-  type: NavBarActionType.SET_NAV_BAR_STATE,
-  payload: navBarState,
-});
-
 export const NavBarActions = {
-  setNavBarState,
   hoverLink,
 };

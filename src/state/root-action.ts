@@ -1,5 +1,6 @@
 import { RouterAction } from 'connected-react-router';
 import { UnionToIntersection } from '../utility.types';
+import { SalesChartActions } from './components/sales-chart/sales-chart.actions';
 import { NavBarActions } from './nav-bar/nav-bar.actions';
 import { SalesForecastActions } from './pages/sales-forecast/sales-forecast.actions';
 import { RootState } from './root-reducer';
@@ -9,6 +10,7 @@ export const actions = {
   users: UsersActions,
   salesForecast: SalesForecastActions,
   navBar: NavBarActions,
+  salesChart: SalesChartActions,
 };
 
 type ActionsType = typeof actions;

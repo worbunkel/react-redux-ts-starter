@@ -1,5 +1,7 @@
 import { RouterState } from 'connected-react-router';
 import { combineReducers } from 'redux';
+import { salesChartReducer } from './components/sales-chart/sales-chart.reducer';
+import { SalesChartState } from './components/sales-chart/sales-chart.state';
 import { navBarReducer } from './nav-bar/nav-bar.reducer';
 import { NavBarState } from './nav-bar/nav-bar.state';
 import { salesForecastReducer } from './pages/sales-forecast/sales-forecast.reducer';
@@ -12,6 +14,7 @@ export interface RootState {
   router: RouterState;
   salesForecast: SalesForecastState;
   users: UsersState;
+  salesChart: SalesChartState;
 }
 
 export const rootReducer = combineReducers<RootState>({
@@ -19,4 +22,5 @@ export const rootReducer = combineReducers<RootState>({
   router: null,
   salesForecast: salesForecastReducer,
   users: usersReducer,
+  salesChart: salesChartReducer,
 });

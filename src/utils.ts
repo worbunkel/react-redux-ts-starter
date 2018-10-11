@@ -88,3 +88,5 @@ export enum WEEKDAY454 {
   THURSDAY = 5,
   FRIDAY = 6,
 }
+
+export const boundValue = (value: number, min: number, max: number) => Math.min(Math.max(value, min), max);

@@ -1,0 +1,36 @@
+@import '../../../theme.scss';
+
+.sales-chart {
+  width: 500px;
+  height: 500px;
+  border: 1px solid $primary-text;
+
+  .chart-header {
+    width: 100%;
+    display: flex;
+    padding: 0 16px;
+    border-bottom: 1px solid $primary-text;
+
+    .chart-title {
+      flex: 1;
+      font-size: 16px;
+      color: $primary-text;
+      line-height: 40px;
+    }
+  }
+
+  .chart-content {
+    display: flex;
+
+    button {
+      flex: 1;
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+  }
+
+  svg {
+    margin: auto;
+    display: block;
+  }
+}

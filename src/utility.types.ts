@@ -17,3 +17,10 @@ export type DateRange = {
   startDate: dayjs.Dayjs;
   endDate: dayjs.Dayjs;
 };
+
+export type Margin = {
+  top?: number;
+  right?: number;
+  bottom?: number;
+  left?: number;
+};

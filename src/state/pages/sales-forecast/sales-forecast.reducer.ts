@@ -11,7 +11,7 @@ export const salesForecastReducer = (
     case SalesForecastActionType.GET_THIRTY_DAY_FORECAST_REQUEST:
       return onGetThirtyDayForecastRequest(prevState);
     case SalesForecastActionType.GET_THIRTY_DAY_FORECAST_SUCCESS:
-      return onGetThirtyDayForecastSuccess(prevState, action.payload.thirtyDayForecastData);
+      return onGetThirtyDayForecastSuccess(prevState, action.payload as ForecastDayDatum[]);
     case SalesForecastActionType.GET_THIRTY_DAY_FORECAST_FAILURE:
       return onGetThirtyDayForecastFailure(prevState);
     case SalesForecastActionType.GET_SIXTY_DAY_FORECAST_REQUEST:
@@ -36,7 +36,6 @@ export const salesForecastReducer = (
 const onGetThirtyDayForecastRequest = (prevState: SalesForecastState) => ({
   ...prevState,
   isLoading: true,
-  users: [],
 });
 
 const onGetThirtyDayForecastSuccess = (

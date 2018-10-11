@@ -1,89 +1,43 @@
-// import * as dayjs from 'dayjs';
-// import {
-//   getThirtyDayForecastFailure,
-//   getThirtyDayForecastRequest,
-//   getThirtyDayForecastSuccess,
-// } from './nav-bar.actions';
-// import { navBarReducer } from './nav-bar.reducer';
-// import { DefaultNavBarState, ForecastDayDatum } from './nav-bar.state';
+import { hoverLink, NavBarActionType, unhoverLink } from './nav-bar.actions';
+import { navBarReducer } from './nav-bar.reducer';
+import { DefaultNavBarState, NavLink } from './nav-bar.state';
 
-// describe('navBarReducer', () => {
-//   describe('on uncaught action', () => {
-//     it('should return the state', () => {
-//       const prevState = DefaultNavBarState();
-//       const testAction: any = { type: 'asdf', payload: {} };
+describe('navBarReducer', () => {
+  describe('on uncaught action', () => {
+    it('should return the state', () => {
+      const prevState = DefaultNavBarState();
+      const testAction: any = { type: 'asdf', payload: {} };
 
-//       const newState = navBarReducer(prevState, testAction);
+      const newState = navBarReducer(prevState, testAction);
 
-//       expect(newState).toEqual(prevState);
-//     });
-//   });
+      expect(newState).toEqual(prevState);
+    });
+  });
 
-//   describe('on GET_THIRTY_DAY_FORECAST_REQUEST', () => {
-//     it('should set isLoading to true', () => {
-//       const prevState = DefaultNavBarState();
-//       prevState.isLoading = false;
+  describe(`on ${NavBarActionType.HOVER_LINK}`, () => {
+    it('should set hoveredLink to the hovered link', () => {
+      const prevState = DefaultNavBarState();
+      const testLink: NavLink = {
+        linkText: 'Test',
+        url: '/test',
+      };
 
-//       const newState = navBarReducer(prevState, getThirtyDayForecastRequest());
+      const newState = navBarReducer(prevState, hoverLink(testLink));
 
-//       expect(newState.isLoading).toEqual(true);
-//     });
-//   });
+      expect(newState.hoveredLink).toEqual(testLink);
+    });
+  });
 
-//   describe('on GET_THIRTY_DAY_FORECAST_SUCCESS', () => {
-//     it('should set isLoading to false', () => {
-//       const prevState = DefaultNavBarState();
-//       const thirtyDayForecastData: ForecastDayDatum[] = [
-//         {
-//           day: 1,
-//           date: dayjs().unix(),
-//           compPercent: 100,
-//           forecast: 20,
-//           lastYearActual: 30,
-//           thisYearActual: 50,
-//           versusPlan: 20,
-//         },
-//       ];
+  describe(`on ${NavBarActionType.UNHOVER_LINK}`, () => {
+    it('should set hoveredLink to null', () => {
+      const prevState = {
+        ...DefaultNavBarState(),
+        hoveredLink: undefined,
+      };
 
-//       const newState = navBarReducer(prevState, getThirtyDayForecastSuccess(thirtyDayForecastData));
+      const newState = navBarReducer(prevState, unhoverLink());
 
-//       expect(newState.isLoading).toEqual(false);
-//     });
-//     it('should set thirtyDayForecastData', () => {
-//       const prevState = DefaultNavBarState();
-//       const thirtyDayForecastData: ForecastDayDatum[] = [
-//         {
-//           day: 1,
-//           date: dayjs().unix(),
-//           compPercent: 100,
-//           forecast: 20,
-//           lastYearActual: 30,
-//           thisYearActual: 50,
-//           versusPlan: 20,
-//         },
-//       ];
-
-//       const newState = navBarReducer(prevState, getThirtyDayForecastSuccess(thirtyDayForecastData));
-
-//       expect(newState.thirtyDayForecastData).toEqual(thirtyDayForecastData);
-//     });
-//   });
-
-//   describe('on GET_THIRTY_DAY_FORECAST_FAILURE', () => {
-//     it('should set isLoading to false', () => {
-//       const prevState = DefaultNavBarState();
-
-//       const newState = navBarReducer(prevState, getThirtyDayForecastFailure());
-
-//       expect(newState.isLoading).toEqual(false);
-//     });
-//     it('should return the state', () => {
-//       const prevState = DefaultNavBarState();
-//       prevState.isLoading = false;
-
-//       const newState = navBarReducer(prevState, getThirtyDayForecastFailure());
-
-//       expect(newState).toEqual(prevState);
-//     });
-//   });
-// });
+      expect(newState.hoveredLink).toBe(null);
+    });
+  });
+});

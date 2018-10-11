@@ -1,6 +1,12 @@
 import dayjs = require('dayjs');
 import * as _ from 'lodash';
 import { mocker } from 'mocker-data-generator';
+import {
+  getSalesDataFailure,
+  getSalesDataRequest,
+  getSalesDataSuccess,
+} from '../../components/sales-chart/sales-chart.actions';
+import { SalesData } from '../../components/sales-chart/sales-chart.state';
 import { RootDispatch } from '../../root-action';
 import { ForecastDayDatum } from './sales-forecast.state';
 
@@ -18,26 +24,22 @@ export enum SalesForecastActionType {
 
 export type SalesForecastAction = {
   type: SalesForecastActionType;
-  payload?: {
-    thirtyDayForecastData?: ForecastDayDatum[];
-    sixtyDayForecastData?: ForecastDayDatum[];
-    ninetyDayForecastData?: ForecastDayDatum[];
-  };
+  payload?: ReturnType<typeof SalesForecastActions[keyof typeof SalesForecastActions]>['payload'];
 };
 
 export const getThirtyDayForecastRequest = () => ({
   type: SalesForecastActionType.GET_THIRTY_DAY_FORECAST_REQUEST,
+  payload: null as never,
 });
 
 export const getThirtyDayForecastSuccess = (thirtyDayForecastData: ForecastDayDatum[] = []) => ({
   type: SalesForecastActionType.GET_THIRTY_DAY_FORECAST_SUCCESS,
-  payload: {
-    thirtyDayForecastData,
-  },
+  payload: thirtyDayForecastData,
 });
 
 export const getThirtyDayForecastFailure = () => ({
   type: SalesForecastActionType.GET_THIRTY_DAY_FORECAST_FAILURE,
+  payload: null as never,
 });
 
 export const SalesForecastActions = {
@@ -80,5 +82,59 @@ export const getThirtyDayForecastMockData = async (dispatch: RootDispatch) => {
     dispatch(getThirtyDayForecastSuccess(result.thirtyDayForecastData));
   } catch (e) {
     dispatch(getThirtyDayForecastFailure());
+  }
+};
+
+export const getSalesChartMockData = async (dispatch: RootDispatch) => {
+  dispatch(getSalesDataRequest());
+  const regionCount = 30;
+  const weekCount = 52;
+  const regionSchema = {
+    virtualCounter: {
+      incrementalId: 0,
+      virtual: true,
+    },
+    id: {
+      function: function() {
+        return (this.object.virtualCounter % regionCount) + 1;
+      },
+    },
+    week: {
+      function: function() {
+        return Math.floor(this.object.virtualCounter / regionCount) + 1;
+      },
+    },
+    type: {
+      static: 'REGION',
+    },
+    thisYear: {
+      faker: 'random.number({"min": 400000, "max": 500000})',
+    },
+    lastYear: {
+      faker: 'random.number({"min": 400000, "max": 500000})',
+    },
+    forecast: {
+      faker: 'random.number({"min": 450000, "max": 550000})',
+    },
+    versusPlan: {
+      faker: 'random.number({"min": 1000, "max": 3000})',
+    },
+  };
+
+  try {
+    const result: { SalesDataByRegion: SalesData['SalesDataByRegion'] } = await mocker()
+      .schema('SalesDataByRegion', regionSchema, regionCount * weekCount)
+      .build();
+    dispatch(
+      getSalesDataSuccess({
+        SalesDataByRegion: result.SalesDataByRegion,
+        SalesDataByCategory: [],
+        SalesDataByClub: [],
+        SalesDataByMarket: [],
+        SalesDataBySubcategory: [],
+      }),
+    );
+  } catch (e) {
+    dispatch(getSalesDataFailure());
   }
 };
