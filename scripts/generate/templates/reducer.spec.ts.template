@@ -1,0 +1,15 @@
+import { <grts-cc>Reducer } from './<grts-hyphenated>.reducer';
+import { <grts-c>Actions, <grts-c>ActionType } from './<grts-hyphenated>.actions';
+import { Default<grts-c>State } from './<grts-hyphenated>.state';
+describe('<grts-cc>Reducer', () => {
+  describe('on uncaught action', () => {
+    it('should return the state', () => {
+      const prevState = Default<grts-c>State();
+      const testAction: any = { type: '', payload: {} };
+
+      const newState = <grts-cc>Reducer(prevState, testAction);
+
+      expect(newState).toEqual(prevState);
+    });
+  });
+});

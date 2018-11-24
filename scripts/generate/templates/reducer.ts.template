@@ -1,0 +1,15 @@
+import { assertUnreachable } from '../../<grts-relative-depth>utils';
+import { <grts-c>Action, <grts-c>ActionType } from './<grts-hyphenated>.actions';
+import {
+  Default<grts-c>State,
+  <grts-c>State,
+} from './<grts-hyphenated>.state';
+
+export const <grts-cc>Reducer = (prevState = Default<grts-c>State(), action: <grts-c>Action): <grts-c>State => {
+  switch (action.type) {
+    default:
+      assertUnreachable(action.type);
+
+      return prevState;
+  }
+};
