@@ -1,0 +1,8 @@
+@import '@material/elevation/mdc-elevation';
+
+$white: #fff;
+$black: #000;
+
+.card {
+  @include mdc-elevation(2);
+}

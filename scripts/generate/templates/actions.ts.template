@@ -1,0 +1,10 @@
+export enum <grts-c>ActionType {
+}
+
+export type <grts-c>Action = {
+  type: <grts-c>ActionType;
+  payload: ReturnType<typeof <grts-c>Actions[keyof typeof <grts-c>Actions]>['payload'];
+};
+
+export const <grts-c>Actions = {
+};

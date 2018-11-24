@@ -1,0 +1,17 @@
+* {
+  font-family: 'Montserrat', helvetica, arial, sans-serif;
+  box-sizing: border-box;
+  outline: none;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.app {
+  display: grid;
+  min-height: 100%;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 72px 1fr 48px;
+  grid-template-areas:
+    'navbar  navbar  navbar  navbar'
+    'content content content content'
+    'footer  footer  footer  footer';
+}

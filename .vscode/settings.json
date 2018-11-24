@@ -1,0 +1,8 @@
+{
+  "prettier.printWidth": 120,
+  "prettier.requireConfig": true,
+  "prettier.singleQuote": true,
+  "prettier.stylelintIntegration": true,
+  "prettier.trailingComma": "all",
+  "prettier.tslintIntegration": true
+}

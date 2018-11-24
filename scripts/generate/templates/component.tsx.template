@@ -1,0 +1,27 @@
+import * as _ from 'lodash';
+import * as React from 'react';
+import { connect } from 'react-redux';
+import { RootDispatch } from '../<grts-relative-depth>root-action';
+import { RootState } from '../<grts-relative-depth>root-reducer';
+import { <grts-c>Actions } from './<grts-hyphenated>.actions';
+import './<grts-hyphenated>.scss';
+
+type <grts-c>Props = ReturnType<typeof mapStateToProps> & ReturnType<typeof mapDispatchToProps>;
+
+const <grts-c>Component = (props: <grts-c>Props) => (
+  <div className="<grts-hyphenated>">
+    {/* Component Content */}
+  </div>
+);
+
+const mapStateToProps = (state: RootState) => ({
+  ...state.<grts-cc>,
+});
+
+const mapDispatchToProps = (dispatch: RootDispatch) => ({
+});
+
+export const <grts-c> = connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(<grts-c>Component);
