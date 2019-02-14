@@ -1,6 +1,6 @@
-import { RouterState } from 'connected-react-router';
+import { connectRouter, RouterState } from 'connected-react-router';
+import { History } from 'history';
 import * as localforage from 'localforage';
-import * as _ from 'lodash';
 import { combineReducers } from 'redux';
 import { persistReducer } from 'redux-persist';
 import { deepMergeReconciler } from './state.utils';
@@ -15,13 +15,14 @@ localforage.config({
   storeName: 'react-redux-ts-starter_persist',
 });
 
-export const rootReducer = persistReducer(
-  {
-    key: 'root',
-    storage: localforage,
-    stateReconciler: deepMergeReconciler,
-  },
-  combineReducers({
-    router: null,
-  }),
-);
+export const createRootReducer = (history: History) =>
+  persistReducer(
+    {
+      key: 'root',
+      storage: localforage,
+      stateReconciler: deepMergeReconciler,
+    },
+    combineReducers({
+      router: connectRouter(history),
+    }),
+  );
