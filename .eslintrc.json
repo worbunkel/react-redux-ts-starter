@@ -1,7 +1,7 @@
 {
   "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint"],
-  "extends": ["prettier", "prettier/@typescript-eslint", "plugin:react/recommended"],
+  "plugins": ["@typescript-eslint", "react", "lodash"],
+  "extends": ["prettier", "prettier/@typescript-eslint", "plugin:react/recommended", "plugin:lodash/recommended"],
   "parserOptions": {
     "sourceType": "module",
     "ecmaFeatures": {
@@ -52,6 +52,7 @@
     "prefer-const": "error",
     "require-await": "error",
     "semi": "error",
-    "yoda": "error"
+    "yoda": "error",
+    "lodash/import-scope": ["error", "full"]
   }
 }
