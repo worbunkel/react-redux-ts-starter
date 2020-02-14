@@ -4,3 +4,4 @@ node_modules/
 src/**/*.jsx
 __coverage__/
 .DS_Store
+package-lock.json

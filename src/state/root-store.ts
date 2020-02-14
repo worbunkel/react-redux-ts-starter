@@ -1,7 +1,7 @@
 import { routerMiddleware } from 'connected-react-router';
 import { createBrowserHistory } from 'history';
 import * as _ from 'lodash';
-import { applyMiddleware, createStore } from 'redux';
+import { applyMiddleware, createStore, compose } from 'redux';
 import { persistStore } from 'redux-persist';
 import middleware from 'redux-thunk';
 import { reactotron } from './reactotron';
@@ -16,7 +16,15 @@ const configureStore = () => {
 
   const isLocalDev = _.includes(window.location.href, 'localhost');
 
-  return (isLocalDev ? reactotron.createStore : createStore)(rootReducer, applyMiddleware(...middlewares));
+  return createStore(
+    rootReducer,
+    isLocalDev
+      ? compose(
+          applyMiddleware(...middlewares),
+          reactotron.createEnhancer(),
+        )
+      : applyMiddleware(...middlewares),
+  );
 };
 
 export const store = configureStore();
