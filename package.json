@@ -102,7 +102,7 @@
     "graphql-request": "^1.8.2",
     "history": "^4.9.0",
     "localforage": "^1.7.3",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "mdi-react": "^5.5.0",
     "mocker-data-generator": "^2.6.6",
     "number-abbreviate": "^2.0.0",
